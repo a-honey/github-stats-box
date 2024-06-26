@@ -22,6 +22,7 @@ async function main() {
     try {
         stats = await getStats();
         console.info('혹시 한글 몰라?');
+        console.log(너 다시 다운 안하는구나);
         console.info(JSON.stringify(stats, null, 2));
     } catch (e) {
         throw new Error(`cannot retrieve statistics: ${e.message}`);
