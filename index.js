@@ -88,7 +88,8 @@ async function updateGist(stats) {
         return;
     }
 
-    return request('PATCH /gists/:gist_id', {
+    console.log('나의 gist', gistId);
+    return request('PATCH /gists/98db07956f0eb0a70154df06e73e3cab', {
         files: {
             [filename]: {
                 filename: `${stats.name}'s GitHub Stats`,
