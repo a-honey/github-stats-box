@@ -12,7 +12,8 @@ const countAllCommits = process.env.ALL_COMMITS.toString() === 'true';
 const kFormat = process.env.K_FORMAT.toString() === 'true';
 
 async function main() {
-    console.log(gistId)
+    console.log('바보의 이야기');
+    console.log(gistId);
     if (!githubToken) {
         throw new Error('GH_TOKEN is not defined');
     }
