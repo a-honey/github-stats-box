@@ -60,7 +60,8 @@ async function getStats() {
 
 async function updateGist(stats) {
     const humanize = (n) => (n >= 1000 ? numeral(n).format(kFormat ? '0.0a' : '0,0') : n);
-
+    console.log('누가');
+    
     const gistContent =
         [
             ['⭐', `Total Stars`, humanize(stats.totalStars)],
@@ -76,13 +77,19 @@ async function updateGist(stats) {
                 return line;
             })
             .join('\n') + '\n';
+    console.log('실행이');
 
-    const gist = await request('GET /gists/:gist_id', {
-        gist_id: gistId,
-        headers: { authorization: `token ${githubToken}` },
-    });
-    const filename = Object.keys(gist.data.files)[0];
-
+    try {
+        const gist = await request('GET /gists/:gist_id', {
+            gist_id: gistId,
+            headers: { authorization: `token ${githubToken}` },
+        });
+        const filename = Object.keys(gist.data.files)[0];
+        console.log('안되니');
+    } catch (error) {
+        console.error('나겠죠', error);
+    }
+    
     if (gist.data.files[filename].content === gistContent) {
         console.info('Nothing to update');
         return;
