@@ -21,7 +21,7 @@ async function main() {
     let stats;
     try {
         stats = await getStats();
-        console.info('Successfully fetched statistics from GitHub');
+        console.info('혹시 한글 몰라?');
         console.info(JSON.stringify(stats, null, 2));
     } catch (e) {
         throw new Error(`cannot retrieve statistics: ${e.message}`);
