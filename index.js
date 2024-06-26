@@ -12,6 +12,7 @@ const countAllCommits = process.env.ALL_COMMITS.toString() === 'true';
 const kFormat = process.env.K_FORMAT.toString() === 'true';
 
 async function main() {
+    console.info('진짜 바보의 이야기');
     console.log('바보의 이야기');
     console.log(gistId);
     if (!githubToken) {
